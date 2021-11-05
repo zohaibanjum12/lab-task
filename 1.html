@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>signup</title>
+        <script>
+function validate(){
+    var name=document.stud_form.name;
+    if(name.value.length<=0){
+        alert("Name is required")
+        name.focus()
+        return false;
+    }var mobile=document.stud_form.mobile;
+    if(mobile.value.length<=0){
+        alert("Mobile is required")
+        mobile.focus()
+        return false;
+    }var email=document.stud_form.email;
+    if(email.value.length<=0){
+        alert("email is required")
+        email.focus()
+        return false;
+    }var gender=document.stud_form.gender;
+    if(gender.value.length<=0){
+        alert("gender is required")
+        gender.focus()
+        return false;
+    }var course=document.stud_form.course;
+    if(course.value=="select"){
+        alert("course is required")
+        course.focus()
+        return false;
+    }
+    var check=false;
+    for(var i=program.length-1;i>=0;i--){
+        if(program[i].checked){
+            check=ture;
+        }}
+        if(check==false){
+        alert("program is required")
+        return false;
+    }
+    return false;}
+    function validateString(id){
+        var element=document.getElementById(id);
+        var regExp=/^[a-zA-Z ]{15}$/;
+        if(!regExp.test(element.value)){
+            alert("enter string value less then 15")
+            return false;
+        }
+    }
+    function validateEmail(id){
+        var element=document.getElementById(id);
+        var regExp=/^[a-zA-Z0-9.]+@[a-a-zA-Z0-9.]+\.[a-zA-Z]{2,4}$/;
+        if(!regExp.test(element.value)){
+            alert("enter valide Email")
+            return false;
+        }
+    }
+    function validateNumb(id){
+        var element=document.getElementById(id);
+        var regExp=/^[0-9]{11}$/;
+        if(!regExp.test(element.value)){
+            alert("enter valide number")
+            return false;
+        }
+    }
+    
+
+        </script>
+        <link rel="stylesheet" href="1.css">
+        <body>
+            <h1>SignUp form</h1>
+            <hr>
+            <h2> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Student form</h2>
+            <form method="" action="" name="stud_form" onsubmit="return validate()">
+            <table border="3px solidblack2" align="center">
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" id="name"  name="name" onblur="validateString(this.id)"></td>
+                </tr>
+                <tr>
+                    <td><label>Mobile</label></td>
+                    <td><input type="number" id="numb"  name="mobile" onblur="validateNumb(this.id)"></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="text" id="email" name="email" onblur="validateEmail(this.id)"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td><input type="radio" id="" name="gender" value="Male">Male
+                    <input type="radio" id="" name="gender" value="Female">Female</td>
+                </tr>
+                <tr>
+                    <td><label>Course</label></td>
+                    <td><select name="course" >
+                        <option>select</option>
+                        <option>OOP</option>
+                        <option>DCN</option>
+                        <option>Web Engineering</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Program</label></td>
+                    <td><input type="checkbox" id="" name="program">BSCS
+                    <input type="checkbox" id="" name="program">BSSE
+                    <input type="checkbox" id="" name="program">BSAI</td>
+                </tr>
+                <tr>
+                    
+                    <td><input type="submit" id="" name="submit" value="submit" onfocus="validateString(this.id)">
+                    <input type="Reset" id="" name="reset" value="reset"></td>
+                </tr>
+            </table>
+        </form>
+        </body>
+    </head>
+</html>

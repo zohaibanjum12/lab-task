@@ -1,0 +1,12 @@
+body{
+	background-image: url(background.jpg);
+    background-repeat: no-repeat;
+	background-size: 1600px 700px;
+	
+}
+h2{
+	float: center;
+}
+input{
+	background-color: blue;
+}
